@@ -30,7 +30,7 @@
    <img src="img\postmanget.JPG" >
   
   ### Passo 3:
-   Você deve Utilizar o método POST para criar um novo endereço ficiticio no formato JSON:
+   Você deve Utilizar o método POST para criar um novo endereço ficiticio, o formato utilizado é JSON:
  ```  
     {
      "houseNumber": "80",
@@ -44,7 +44,9 @@
 ```
 <img src="img\postmanpost.JPG" >
   
-  ### Utilize o Postman com método GET informando ID do objeto criado no endereço https://addressapiby.herokuapp.com/address/1 onde "1" é o ID do objeto a ser localizado, caso tudo esteja correto irá ver o endereço informado e poderá o consultar o objeto enquanto ele existir no sistema, caso o objeto desapareça será necessário criar novamente. 
+  ## Utilize o Postman e use o método GET informando ID do objeto criado no endereço:
+   ### https://addressapiby.herokuapp.com/address/1 
+   ## No link acima o número 1 é o ID do objeto a ser localizado, caso tudo esteja correto irá ver o endereço informado e poderá o consultar o objeto criado enquanto ele existir no Banco de dados, caso o objeto desapareça será necessário criar novamente. 
    
 <img src="img\objeto.JPG" >
    
