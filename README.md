@@ -43,8 +43,10 @@
      }
 ```
 <img src="postmanpost.JPG" >
+  
+  ### Utilize o Postman informando ID do objeto criado no endereço https://addressapiby.herokuapp.com/address/1 onde "1" é o ID do objeto. 
+   
 
-  ### Passo 4
-    
+   
 
  
