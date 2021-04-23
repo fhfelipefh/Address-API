@@ -22,6 +22,12 @@ public class Addcontroller {
     @Autowired
     public Addcontroller(Repository repository, Addservice addservice) { this.repository = repository;this.addservice = addservice; }
 
+    //GET init
+    @GetMapping("")
+    String hello() {
+        return "Hello, World!";
+    }
+
     //POST
     @PostMapping("/")
     public ResponseEntity<Address> saveAddress(@RequestBody Address address){
