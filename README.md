@@ -44,7 +44,7 @@
 ```
 <img src="img\postmanpost.JPG" >
   
-  ### Utilize o Postman com método GET informando ID do objeto criado no endereço https://addressapiby.herokuapp.com/address/1 onde "1" é o ID do objeto a ser localizado, caso tudo esteja correto irá ver o endereço informado e poderá o consultar. 
+  ### Utilize o Postman com método GET informando ID do objeto criado no endereço https://addressapiby.herokuapp.com/address/1 onde "1" é o ID do objeto a ser localizado, caso tudo esteja correto irá ver o endereço informado e poderá o consultar o objeto enquanto ele existir no sistema, caso o objeto desapareça será necessário criar novamente. 
    
 <img src="img\objeto.JPG" >
    
