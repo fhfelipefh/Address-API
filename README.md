@@ -16,16 +16,16 @@
 
 ## Como funciona? :mag_right:
 
-###Teste de conexão: 
+### Teste de conexão: 
 
  Você pode fazer um teste de conexão utilizando o link https://addressapiby.herokuapp.com/address/ e caso o servidor esteja em operação verá uma página web com a mensagem "Hello, World!", a API está hospedada na  plataforma Heroku que pode ser acessada em heroku.com. 
  
- ###Passo 2:
+ ### Passo 2:
  
   Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API na plataforma Heroku. 
   Caso utilize o método GET no endereço https://addressapiby.herokuapp.com/address/ verá o mesmo resultado do seu navegador, o diferencial é poder utilizar fácilmente os outros métodos entre eles POST,PUT,PATCH e DELETE.
   
-  ###Passo 3:
+  ### Passo 3:
    Você deve Utilizar o método POST para criar um novo endereço ficiticio no formato JSON:
  ```  
     {
@@ -39,6 +39,7 @@
      }
 ```
 
+  ### Passo 4
     
 
  
