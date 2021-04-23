@@ -27,6 +27,8 @@
   Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API na plataforma Heroku. 
   Caso utilize o método GET no endereço https://addressapiby.herokuapp.com/address/ verá o mesmo resultado do seu navegador, o diferencial é poder utilizar fácilmente os outros métodos entre eles POST,PUT,PATCH e DELETE.
   
+   <img src="postmanget.JPG" >
+  
   ### Passo 3:
    Você deve Utilizar o método POST para criar um novo endereço ficiticio no formato JSON:
  ```  
@@ -40,6 +42,7 @@
      "type": "HOME"
      }
 ```
+<img src="postmanpost.JPG" >
 
   ### Passo 4
     
