@@ -38,8 +38,7 @@
      "type": "HOME"
      }
 ```
- ###Utilizando o Postman verifique o resultado
-    
+
     
 
  
