@@ -39,8 +39,7 @@
      }
 ```
  ###Utilizando o Postman verifique o resultado
- 
-    Os atributos são Strings e podem receber letras e números com exceção de "type" que é um ENUM e só pode receber 4 valores (HOME,APARTMENT, COMPANY,GOVERNMENT) isso fará requisições de POST fora desse valores específicos serem negadas. 
-    Após clicar em 'send' no Postman a requisição de criação será enviada para a API e irá criar um novo endereço no banco de dados, (os endereços serão apagados ocasionalmente) e você poderá ver o ID do endereço criado Postman e então irá utiliza-lo obter o objeto atribuindo o valor do ID no endereço após a '/' no endereço https://addressapiby.herokuapp.com/address/1 onde ao invés de "1" irá informar o ID ao qual precisa buscar. 
+    
+    
 
  
