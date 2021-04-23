@@ -20,6 +20,8 @@
 
  Você pode fazer um teste de conexão utilizando o link https://addressapiby.herokuapp.com/address/ e caso o servidor esteja em operação verá uma página web com a mensagem "Hello, World!", a API está hospedada na  plataforma Heroku que pode ser acessada em heroku.com. 
  
+ <img src="helloworld.jpg" alt="hello world"/>
+ 
  ### Passo 2:
  
   Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API na plataforma Heroku. 
