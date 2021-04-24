@@ -8,7 +8,7 @@
 
 * **API** ----- Uma API é uma interface capaz de comunicar aplicações e realizar tarefas sem precisar saber como eles foram implementados. 
 * **REST** ---- Rest é estilo de arquitetura de software que define um conjunto de restrições a serem usadas para a criação de web services.
-* **Spring** ------ É uma framework open source para a plataforma Java e capaz de facilitar a criação de uma API Rest.
+* **Spring** ------ É um framework open source para a plataforma Java e capaz de facilitar a criação de uma API Rest.
 * **HTTP** -- HTTP é um protocolo que permite a obtenção de recursos, como documentos HTML. É a base de qualquer troca de dados na Web e um protocolo cliente-servidor, o que significa que as requisições são iniciadas pelo destinatário, geralmente um navegador da Web.
 
 <small>Fonte: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview</small>
