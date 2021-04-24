@@ -60,7 +60,7 @@
    
   ## Utilizando PATCH:
    <img src="img\patch.JPG" >
-   Você pode utilizar também um JSON para editar o CEP e caso ocorra tudo bem irá retornar uma mensagem de sucesso.
+   Você pode utilizar também um JSON para editar o CEP e caso tudo esteja correto irá retornar uma mensagem de sucesso.
    
    # Como fazer uma pesquisa por CEP?
    <img src="img\getbycep.JPG" >
