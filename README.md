@@ -68,6 +68,6 @@
    
    ### https://addressapiby.herokuapp.com/address/cep?cep=9999
    
-   Onde o número "9999" é o número que você deseja pesquisar irá retornar os endereços com CEPs parecidos com o valor informado. 
+   Onde o número "9999" é o número que você deseja pesquisar irá retornar os endereços com CEPs parecidos com o valor informado, caso use um navegador e o banco de dados possua    varios endereços você pode ver algo parecido com  o exemplo abaixo:
    <img src="img\getcepex.JPG">
  
