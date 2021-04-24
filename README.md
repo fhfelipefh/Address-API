@@ -1,4 +1,4 @@
-<p align="center"><h1>Address-API</h1></p>
+<p align="center"><img src="img\logo.PNG"></p>
 
 <p align="center">
   <small>Uma API Rest construida em Spring boot para cadastro de endereços brasileiros fictícios.</small>
