@@ -42,7 +42,11 @@
      "type": "HOME"
      }
 ```
+<small>Os Type compatíveis são: "HOME","APARTMENT","COMPANY","GOVERNMENT".</small>
+
 <img src="img\postmanpost.JPG" >
+
+  ### Passo 4: :dart:
   
   ### Utilize o Postman e use o método GET informando ID do objeto criado no endereço:
    ### https://addressapiby.herokuapp.com/address/1 
