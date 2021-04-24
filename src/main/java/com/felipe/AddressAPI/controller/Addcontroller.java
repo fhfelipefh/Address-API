@@ -24,7 +24,7 @@ public class Addcontroller {
     //GET init
     @GetMapping("")
     String hello() {
-        return "Hello, World!";
+        return "<html><p>Hello, World!</p><p><b>Mais informações em:&nbsp;</b><a href='https://github.com/fhfelipefh/Address-API'>https://github.com/fhfelipefh/Address-API</a></p></html>";
     }
 
     //POST
@@ -68,6 +68,8 @@ public class Addcontroller {
         addservice.editcep(id,cep);
         return "sucess";
     }
+
+
 
 
 }
