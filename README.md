@@ -18,19 +18,20 @@
 
 ### Teste de conexão: 
 
- Você pode fazer um teste de conexão utilizando o link https://addressapiby.herokuapp.com/address/ e caso o servidor esteja em operação verá uma página web com a mensagem "Hello, World!", a API está hospedada na  plataforma Heroku que pode ser acessada em heroku.com. 
+ Você pode fazer um teste de conexão utilizando o link https://addressapiby.herokuapp.com/address/ e caso o servidor esteja em operação  verá uma página web com a mensagem "Hello, World!", a API está hospedada remotamente na plataforma Heroku que pode ser acessada em  https://heroku.com 
  
- <img src="helloworld.JPG" >
+ <img src="img\helloworld.JPG" >
  
  ### Passo 2:
  
   Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API na plataforma Heroku. 
   Caso utilize o método GET no endereço https://addressapiby.herokuapp.com/address/ verá o mesmo resultado do seu navegador, o diferencial é poder utilizar fácilmente os outros métodos entre eles POST,PUT,PATCH e DELETE.
   
-   <img src="postmanget.JPG" >
+   <img src="img\postmanget.JPG" >
   
   ### Passo 3:
-   Você deve Utilizar o método POST para criar um novo endereço ficiticio no formato JSON:
+   Você deve Utilizar o método POST para criar um novo endereço ficiticio, o formato utilizado é JSON:
+   
  ```  
     {
      "houseNumber": "80",
@@ -42,11 +43,26 @@
      "type": "HOME"
      }
 ```
-<img src="postmanpost.JPG" >
+<img src="img\postmanpost.JPG" >
   
-  ### Utilize o Postman com método GET informando ID do objeto criado no endereço https://addressapiby.herokuapp.com/address/1 onde "1" é o ID do objeto a ser localizado, caso tudo esteja correto irá ver o endereço informado e poderá o consultar. 
+  ### Utilize o Postman e use o método GET informando ID do objeto criado no endereço:
+   ### https://addressapiby.herokuapp.com/address/1 
+   ### No link acima o número 1 é o ID do objeto a ser localizado, caso tudo esteja correto irá ver o endereço informado e poderá o consultar o objeto criado enquanto ele existir no Banco de dados, caso o objeto desapareça será necessário criar novamente. 
    
-
+<img src="img\objeto.JPG" >
    
+  # Como editar uma informação? métodos PUT e PATCH
+  - O método de requisição HTTP PUT cria um novo recurso ou subsititui uma representação do recurso de destino com os novos dados.
+  - O método de requisição HTTP PATCH aplica modificações parciais a um recurso.
 
+  ## Utilizando PUT:
+   <img src="img\put.JPG" >
+   Você pode utilizar um JSON contendo o novo número.
+  ## Utilizando PATCH:
+   <img src="img\patch.JPG" >
+   Você pode utilizar também um JSON para editar o CEP e caso ocorra tudo bem irá retornar uma mensagem de sucesso.
+   
+   # Como fazer uma pesquisa por CEP?
+   <img src="img\getbycep.JPG" >
+   Utilizando o CEP você pode pesquisar inserindo a informação ```/address/cep?cep=9999``` e o método GET onde o número "9999" é o número que você deseja pesquisar.
  
