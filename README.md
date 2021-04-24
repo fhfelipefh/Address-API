@@ -62,9 +62,12 @@
    <img src="img\patch.JPG" >
    Você pode utilizar também um JSON para editar o CEP e caso tudo esteja correto irá retornar uma mensagem de sucesso.
    
-   # Como fazer uma pesquisa por CEP?
+   ## Como fazer uma pesquisa por CEP?
    <img src="img\getbycep.JPG" >
    Utilizando o CEP você pode pesquisar inserindo a informação com o método GET na barra de pesquisa usando os valores:
-   ``` /address/cep?cep=9999 ``` 
-   e o método GET onde o número "9999" é o número que você deseja pesquisar irá retornar os endereços com CEPs parecidos aquele valor informado.
+   
+   ### https://addressapiby.herokuapp.com/address/cep?cep=9999
+   
+   Onde o número "9999" é o número que você deseja pesquisar irá retornar os endereços com CEPs parecidos com o valor informado. 
+   <img src="img\getcepex.JPG">
  
