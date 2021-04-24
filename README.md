@@ -3,7 +3,7 @@
 <p align="center">
   <small>Uma API Rest construida em Spring boot para cadastro de endereços brasileiros fictícios.</small>
 </p>
-
+<hr>
 #### - Não conhece esses termos? Aqui está :smile::arrow_down:
 
 * **API** ----- Uma API é uma interface capaz de comunicar aplicações e realizar tarefas sem precisar saber como eles foram implementados. 
