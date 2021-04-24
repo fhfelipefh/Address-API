@@ -43,10 +43,11 @@
      }
 ```
 <small>Os Type compatíveis são: "HOME","APARTMENT","COMPANY","GOVERNMENT".
-       Caso o esteja tudo bem você verá um body como imagem acima contendo um ID. 
+       Caso o esteja tudo bem você verá um body como imagem abaixo contendo um ID. 
 </small>
 
 <img src="img\postmanpost.JPG" >
+        Os endereços são apagados ocasionalmente mas é perfeitamente possível encontrar os endereços salvos após alguns minutos desde sua criação.
 
   ### Passo 4: :dart:
   
@@ -78,4 +79,4 @@
    
    <img src="img\getcepex.JPG">
 
-* **Aviso** ---- Utilize apenas endereços fictícios.
+* **Aviso** ---- Utilize apenas para salvar endereços fictícios.
