@@ -13,6 +13,7 @@
 
 <small>Fonte: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview</small>
 <hr>
+
 ## Como funciona? :mag_right:
 
 ### Teste de conexão: 
@@ -21,6 +22,7 @@
  
  <img src="img\helloworld.JPG" >
  <hr>
+ 
  ### Passo 2:
  
   Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API na plataforma Heroku. 
@@ -28,6 +30,7 @@
   
    <img src="img\postmanget.JPG" >
   <hr>
+  
   ### Passo 3: :postbox:
    Você deve Utilizar o método POST para criar um novo endereço ficiticio, o formato utilizado é JSON:
    
@@ -49,6 +52,7 @@
 <img src="img\postmanpost.JPG" >
         Os endereços são apagados após muito tempo de inatividade, pode ser necessário criar novos após algumas horas.
 <hr>
+
   ### Passo 4: :dart:
   
   ### Utilize o Postman e use o método GET informando ID do objeto criado no endereço:
