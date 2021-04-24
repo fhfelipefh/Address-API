@@ -1,7 +1,7 @@
 package com.felipe.AddressAPI.enums;
 
 
-public enum descriptiontype {
+public enum descriptionType {
 
     HOME,
     APARTMENT,

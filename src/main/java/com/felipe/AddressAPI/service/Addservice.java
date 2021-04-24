@@ -1,12 +1,8 @@
 package com.felipe.AddressAPI.service;
 
-import com.felipe.AddressAPI.AddressApiApplication;
 import com.felipe.AddressAPI.address.Address;
 import com.felipe.AddressAPI.address.Repository;
-import com.felipe.AddressAPI.exeption.AddressAPIException;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
+import com.felipe.AddressAPI.exception.AddressAPIException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

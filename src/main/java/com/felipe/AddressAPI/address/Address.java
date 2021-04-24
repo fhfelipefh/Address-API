@@ -1,6 +1,6 @@
 package com.felipe.AddressAPI.address;
 
-import com.felipe.AddressAPI.enums.descriptiontype;
+import com.felipe.AddressAPI.enums.descriptionType;
 
 import javax.persistence.*;
 
@@ -22,13 +22,13 @@ public class Address {
     private String country;
     @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
-    private descriptiontype type;
+    private descriptionType type;
 
-    public descriptiontype getType() {
+    public descriptionType getType() {
         return type;
     }
 
-    public void setType(descriptiontype type) {
+    public void setType(descriptionType type) {
         this.type = type;
     }
 
