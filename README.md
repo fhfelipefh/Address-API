@@ -42,7 +42,9 @@
      "type": "HOME"
      }
 ```
-<small>Os Type compatíveis são: "HOME","APARTMENT","COMPANY","GOVERNMENT".</small>
+<small>Os Type compatíveis são: "HOME","APARTMENT","COMPANY","GOVERNMENT".
+       Caso o esteja tudo bem você verá um body como imagem acima contendo um ID. 
+</small>
 
 <img src="img\postmanpost.JPG" >
 
@@ -75,4 +77,5 @@
    Onde o número "9999" é o número que você deseja pesquisar irá retornar os endereços com CEPs parecidos com o valor informado, caso use um navegador e o banco de dados possua    varios endereços você pode ver algo parecido com  o exemplo abaixo:
    
    <img src="img\getcepex.JPG">
- 
+
+* **Aviso** ---- Utilize apenas endereços fictícios.
