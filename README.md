@@ -57,6 +57,7 @@
   ## Utilizando PUT:
    <img src="img\put.JPG" >
    Você pode utilizar um JSON contendo o novo número.
+   
   ## Utilizando PATCH:
    <img src="img\patch.JPG" >
    Você pode utilizar também um JSON para editar o CEP e caso ocorra tudo bem irá retornar uma mensagem de sucesso.
