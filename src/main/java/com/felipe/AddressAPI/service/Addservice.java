@@ -44,5 +44,11 @@ public class Addservice {
     }
 
     public List<Address> getBycep(String cep) { return this.repository.findByCepContains(cep); }
-    
+
+    public void editcep(Long id, Address cep) {
+        final Address newcep = repository.findById(id).orElseThrow(() -> new RuntimeException("Cep empty"));
+        newcep.setCep(cep.getCep());
+        repository.save(newcep);
+    }
+
 }

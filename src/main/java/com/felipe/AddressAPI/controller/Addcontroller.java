@@ -2,7 +2,6 @@ package com.felipe.AddressAPI.controller;
 
 import com.felipe.AddressAPI.address.Address;
 import com.felipe.AddressAPI.address.Repository;
-import com.felipe.AddressAPI.enums.descriptiontype;
 import com.felipe.AddressAPI.service.Addservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -58,12 +57,17 @@ public class Addcontroller {
     }
 
     //PUT - House number
-    @PutMapping("/{id}")
+    @PutMapping("/put/{id}")
     public ResponseEntity<Address> updater(@PathVariable Long id, @RequestBody Address address) {
         return ResponseEntity.ok(addservice.updaterHouseNumber(id, address));
     }
 
-
+    //Patch
+    @PatchMapping("/patch/{id}")
+    public String editcep(@PathVariable("id") Long id, @RequestBody Address cep){
+        addservice.editcep(id,cep);
+        return "sucess";
+    }
 
 
 }
