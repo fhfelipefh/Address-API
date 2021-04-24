@@ -1,5 +1,6 @@
+<p align="center">
 # Address-API
-
+</p>
 
 <p align="center">
   <small>Uma API Rest construida em Spring boot para cadastro de endereços brasileiros fictícios.</small>
