@@ -47,7 +47,7 @@
 </small>
 
 <img src="img\postmanpost.JPG" >
-        Os endereços são apagados ocasionalmente mas é perfeitamente possível encontrar os endereços salvos após alguns minutos desde sua criação.
+        Os endereços são apagados após muito tempo de inatividade, pode ser necessário criar novos após algumas horas.
 
   ### Passo 4: :dart:
   
