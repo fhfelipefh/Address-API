@@ -27,6 +27,12 @@ public class Addcontroller {
         return "<html><p>Hello, World!</p><p><b>Mais informações em:&nbsp;</b><a href='https://github.com/fhfelipefh/Address-API'>https://github.com/fhfelipefh/Address-API</a></p></html>";
     }
 
+    //Get ALL
+    @GetMapping("/all")
+    public ResponseEntity<List<Address>> listall(){
+        return ResponseEntity.ok(addservice.listall());
+    }
+
     //POST
     @PostMapping("/")
     public ResponseEntity<Address> saveAddress(@RequestBody Address address){

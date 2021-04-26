@@ -47,4 +47,9 @@ public class Addservice {
         repository.save(newcep);
     }
 
+    //list all
+    public List<Address> listall() {
+        return this.repository.findAll();
+    }
+
 }
