@@ -13,13 +13,17 @@ public class Addservice {
 
     private Repository repository;
 
-    public Optional<Address> get(Long id){
+    public Optional<Address> get(Long id) {
         return this.repository.findById(id);
     }
 
-    public Addservice(Repository repository) { this.repository = repository; }
+    public Addservice(Repository repository) {
+        this.repository = repository;
+    }
 
-    public Optional<Address> getid(Long id) { return this.repository.findById(id); }
+    public Optional<Address> getId(Long id) {
+        return this.repository.findById(id);
+    }
 
     public Address include(Address address) {
         if (address.getId() != null) {
@@ -32,14 +36,16 @@ public class Addservice {
         this.repository.deleteById(id);
     }
 
-    public Address updaterHouseNumber(Long id, Address address) {
-        Address addressup = get(id)
-                .orElseThrow(() -> new AddressAPIException("Address", "update", id));
-        addressup.setHouseNumber(address.getHouseNumber());
-        return this.repository.save(addressup);
+    public Address updaterAddress(Long id, Address address) {
+        if (!get(address.getId()).isPresent()) {
+            new AddressAPIException("Address", "update", id);
+        }
+        return this.repository.save(address);
     }
 
-    public List<Address> getBycep(String cep) { return this.repository.findByCepContains(cep); }
+    public List<Address> getBycep(String cep) {
+        return this.repository.findByCepContains(cep);
+    }
 
     public void editcep(Long id, Address cep) {
         final Address newcep = repository.findById(id).orElseThrow(() -> new RuntimeException("Cep empty"));

@@ -19,7 +19,10 @@ public class Addcontroller {
     private final Addservice addservice;
 
     @Autowired
-    public Addcontroller(Repository repository, Addservice addservice) { this.repository = repository;this.addservice = addservice; }
+    public Addcontroller(Repository repository, Addservice addservice) {
+        this.repository = repository;
+        this.addservice = addservice;
+    }
 
     //GET init
     @GetMapping("")
@@ -29,13 +32,13 @@ public class Addcontroller {
 
     //Get ALL
     @GetMapping("/all")
-    public ResponseEntity<List<Address>> listall(){
+    public ResponseEntity<List<Address>> listall() {
         return ResponseEntity.ok(addservice.listall());
     }
 
     //POST
     @PostMapping("/")
-    public ResponseEntity<Address> saveAddress(@RequestBody Address address){
+    public ResponseEntity<Address> saveAddress(@RequestBody Address address) {
         return ResponseEntity.status(HttpStatus.CREATED).body(addservice.include(address));
     }
 
@@ -48,34 +51,32 @@ public class Addcontroller {
 
     //Find by cep ex: localhost:8081/address/cep?cep=99
     @GetMapping("/cep")
-    public ResponseEntity<List<Address>> findAddressByCep(@RequestParam("cep") String cep){
-    return ResponseEntity.ok(repository.findByCepContains(cep));
+    public ResponseEntity<List<Address>> findAddressByCep(@RequestParam("cep") String cep) {
+        return ResponseEntity.ok(repository.findByCepContains(cep));
     }
 
     //Get by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Address> getAddress(@PathVariable Long id){
-        Optional<Address> opaddress = addservice.getid(id);
-        if(opaddress.isPresent()){
+    public ResponseEntity<Address> getAddress(@PathVariable Long id) {
+        Optional<Address> opaddress = addservice.getId(id);
+        if (opaddress.isPresent()) {
             return ResponseEntity.ok(opaddress.get());
         }
         return ResponseEntity.noContent().build();
     }
 
-    //PUT - House number
+    //PUT
     @PutMapping("/put/{id}")
     public ResponseEntity<Address> updater(@PathVariable Long id, @RequestBody Address address) {
-        return ResponseEntity.ok(addservice.updaterHouseNumber(id, address));
+        return ResponseEntity.ok(addservice.updaterAddress(id, address));
     }
 
     //Patch
     @PatchMapping("/patch/{id}")
-    public String editcep(@PathVariable("id") Long id, @RequestBody Address cep){
-        addservice.editcep(id,cep);
+    public String editcep(@PathVariable("id") Long id, @RequestBody Address cep) {
+        addservice.editcep(id, cep);
         return "sucess";
     }
-
-
 
 
 }
