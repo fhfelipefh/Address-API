@@ -3,36 +3,38 @@ package com.felipe.AddressAPI.service;
 import com.felipe.AddressAPI.address.Address;
 import com.felipe.AddressAPI.address.Repository;
 import com.felipe.AddressAPI.exception.AddressAPIException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class Addservice {
+public class AddService {
 
+    @Autowired
     private Repository repository;
+
+    public AddService(Repository repository) {
+        this.repository = repository;
+    }
 
     public Optional<Address> get(Long id) {
         return this.repository.findById(id);
-    }
-
-    public Addservice(Repository repository) {
-        this.repository = repository;
     }
 
     public Optional<Address> getId(Long id) {
         return this.repository.findById(id);
     }
 
-    public Address include(Address address) {
+    public Address saveAddress(Address address) {
         if (address.getId() != null) {
-            throw new AddressAPIException("Address", "include", address.getId());
+            throw new AddressAPIException("Address", "saveAddress", address.getId());
         }
         return this.repository.save(address);
     }
 
-    public void exclude(Long id) {
+    public void deleteAddressById(Long id) {
         this.repository.deleteById(id);
     }
 
@@ -43,18 +45,17 @@ public class Addservice {
         return this.repository.save(address);
     }
 
-    public List<Address> getBycep(String cep) {
+    public List<Address> getAddressByCep(String cep) {
         return this.repository.findByCepContains(cep);
     }
 
-    public void editcep(Long id, Address cep) {
+    public void updateCep(Long id, Address cep) {
         final Address newcep = repository.findById(id).orElseThrow(() -> new RuntimeException("Cep empty"));
         newcep.setCep(cep.getCep());
         repository.save(newcep);
     }
 
-    //list all
-    public List<Address> listall() {
+    public List<Address> listAll() {
         return this.repository.findAll();
     }
 

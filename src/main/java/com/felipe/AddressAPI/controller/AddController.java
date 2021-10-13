@@ -2,7 +2,7 @@ package com.felipe.AddressAPI.controller;
 
 import com.felipe.AddressAPI.address.Address;
 import com.felipe.AddressAPI.address.Repository;
-import com.felipe.AddressAPI.service.Addservice;
+import com.felipe.AddressAPI.service.AddService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,13 +13,13 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/address")
-public class Addcontroller {
+public class AddController {
 
     private Repository repository;
-    private final Addservice addservice;
+    private final AddService addservice;
 
     @Autowired
-    public Addcontroller(Repository repository, Addservice addservice) {
+    public AddController(Repository repository, AddService addservice) {
         this.repository = repository;
         this.addservice = addservice;
     }
@@ -33,19 +33,19 @@ public class Addcontroller {
     //Get ALL
     @GetMapping("/all")
     public ResponseEntity<List<Address>> listall() {
-        return ResponseEntity.ok(addservice.listall());
+        return ResponseEntity.ok(addservice.listAll());
     }
 
     //POST
     @PostMapping("/")
     public ResponseEntity<Address> saveAddress(@RequestBody Address address) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(addservice.include(address));
+        return ResponseEntity.status(HttpStatus.CREATED).body(addservice.saveAddress(address));
     }
 
     //DELETE
     @DeleteMapping("/{id}")
     public ResponseEntity<Address> exclude(@PathVariable Long id) {
-        addservice.exclude(id);
+        addservice.deleteAddressById(id);
         return ResponseEntity.ok().build();
     }
 
@@ -74,7 +74,7 @@ public class Addcontroller {
     //Patch
     @PatchMapping("/patch/{id}")
     public String editcep(@PathVariable("id") Long id, @RequestBody Address cep) {
-        addservice.editcep(id, cep);
+        addservice.updateCep(id, cep);
         return "sucess";
     }
 

@@ -3,6 +3,7 @@ package com.felipe.AddressAPI.address;
 import com.felipe.AddressAPI.enums.descriptionType;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 
 @Entity(name = "address")
@@ -11,15 +12,29 @@ public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank
     private String houseNumber;
+
+    @NotBlank
     private String street;
+
+    @NotBlank
     private String cep;
+
+    @NotBlank
     @Column(nullable = false)
     private String city;
+
+    @NotBlank
     @Column(nullable = false)
     private String state;
+
+    @NotBlank
     @Column(nullable = false)
     private String country;
+
+    @NotBlank
     @Enumerated(value = EnumType.STRING)
     @Column(nullable = false)
     private descriptionType type;

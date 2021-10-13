@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.felipe'
-version = '0.0.1-SNAPSHOT'
+version = '0.1'
 sourceCompatibility = '11'
 
 repositories {
@@ -17,6 +17,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'junit:junit:4.13.1'
 	implementation 'junit:junit:4.13.1'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.4'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
