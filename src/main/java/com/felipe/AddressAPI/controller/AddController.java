@@ -58,7 +58,7 @@ public class AddController {
     //Get by ID
     @GetMapping("/{id}")
     public ResponseEntity<Address> getAddress(@PathVariable Long id) {
-        Optional<Address> opaddress = addservice.getId(id);
+        Optional<Address> opaddress = addservice.getAddressById(id);
         if (opaddress.isPresent()) {
             return ResponseEntity.ok(opaddress.get());
         }

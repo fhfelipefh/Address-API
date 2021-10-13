@@ -19,11 +19,7 @@ public class AddService {
         this.repository = repository;
     }
 
-    public Optional<Address> get(Long id) {
-        return this.repository.findById(id);
-    }
-
-    public Optional<Address> getId(Long id) {
+    public Optional<Address> getAddressById(Long id) {
         return this.repository.findById(id);
     }
 
@@ -39,7 +35,7 @@ public class AddService {
     }
 
     public Address updaterAddress(Long id, Address address) {
-        if (!get(address.getId()).isPresent()) {
+        if (!getAddressById(address.getId()).isPresent()) {
             new AddressAPIException("Address", "update", id);
         }
         return this.repository.save(address);

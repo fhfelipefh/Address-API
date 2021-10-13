@@ -4,6 +4,7 @@ import com.felipe.AddressAPI.enums.descriptionType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.Objects;
 
 
 @Entity(name = "address")
@@ -101,5 +102,18 @@ public class Address {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Address address = (Address) o;
+        return Objects.equals(id, address.id) && Objects.equals(houseNumber, address.houseNumber) && Objects.equals(street, address.street) && Objects.equals(cep, address.cep) && Objects.equals(city, address.city) && Objects.equals(state, address.state) && Objects.equals(country, address.country) && type == address.type;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, houseNumber, street, cep, city, state, country, type);
     }
 }
