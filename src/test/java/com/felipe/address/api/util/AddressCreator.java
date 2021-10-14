@@ -1,7 +1,7 @@
-package com.felipe.AddressAPI.util;
+package com.felipe.address.api.util;
 
-import com.felipe.AddressAPI.address.Address;
-import com.felipe.AddressAPI.enums.descriptionType;
+import com.felipe.address.api.address.Address;
+import com.felipe.address.api.enums.DescriptionType;
 
 public class AddressCreator {
 
@@ -14,7 +14,7 @@ public class AddressCreator {
         address.setCity("Passo Fundo");
         address.setState("RS");
         address.setCountry("Brazil");
-        address.setType(descriptionType.HOME);
+        address.setType(DescriptionType.HOME);
         return address;
     }
 
@@ -27,7 +27,7 @@ public class AddressCreator {
         address.setCity("Passo Fundo");
         address.setState("RS");
         address.setCountry("Brazil");
-        address.setType(descriptionType.HOME);
+        address.setType(DescriptionType.HOME);
         return address;
     }
 

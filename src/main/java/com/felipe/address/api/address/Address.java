@@ -1,12 +1,21 @@
-package com.felipe.AddressAPI.address;
+package com.felipe.address.api.address;
 
-import com.felipe.AddressAPI.enums.descriptionType;
-import com.felipe.AddressAPI.exception.AddressAPIException;
+import com.felipe.address.api.enums.DescriptionType;
+import com.felipe.address.api.exception.AddressAPIException;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import static javax.persistence.EnumType.STRING;
 
 
 @Entity(name = "address")
@@ -37,18 +46,16 @@ public class Address {
     @Column(nullable = false)
     private String country;
 
-    @NotBlank
-    @Enumerated(value = EnumType.STRING)
+    @NotNull
+    @Enumerated(STRING)
     @Column(nullable = false)
-    private descriptionType type;
+    private DescriptionType type;
 
-
-
-    public descriptionType getType() {
+    public DescriptionType getType() {
         return type;
     }
 
-    public void setType(descriptionType type) {
+    public void setType(DescriptionType type) {
         this.type = type;
     }
 
@@ -121,8 +128,8 @@ public class Address {
         return Objects.hash(id, houseNumber, street, cep, city, state, country, type);
     }
 
-    public ArrayList<AddressAPIException> emptyFieldsVerify(Address address) {
-        ArrayList<AddressAPIException> exceptions = new ArrayList();
+    public List<AddressAPIException> emptyFieldsVerify(Address address) {
+        List<AddressAPIException> exceptions = new ArrayList<>();
         if (address.getHouseNumber() == null) {
             exceptions.add(new AddressAPIException("Null House Number"));
         }
@@ -146,6 +153,18 @@ public class Address {
         }
         return exceptions;
     }
-
-
+    
+    @Override
+    public String toString() {
+        return "Address{" +
+               "id=" + id +
+               ", houseNumber='" + houseNumber + '\'' +
+               ", street='" + street + '\'' +
+               ", cep='" + cep + '\'' +
+               ", city='" + city + '\'' +
+               ", state='" + state + '\'' +
+               ", country='" + country + '\'' +
+               ", type=" + type +
+               '}';
+    }
 }

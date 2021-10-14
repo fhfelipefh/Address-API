@@ -1,9 +1,9 @@
-package com.felipe.AddressAPI.service;
+package com.felipe.address.api.service;
 
-import com.felipe.AddressAPI.address.Address;
-import com.felipe.AddressAPI.address.Repository;
-import com.felipe.AddressAPI.exception.AddressAPIException;
-import com.felipe.AddressAPI.util.AddressCreator;
+import com.felipe.address.api.address.Address;
+import com.felipe.address.api.address.Repository;
+import com.felipe.address.api.exception.AddressAPIException;
+import com.felipe.address.api.util.AddressCreator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -72,9 +72,9 @@ public class AddServiceTest {
         Address address = AddressCreator.createAddress();
         address.setCep(null);
         Exception exception = assertThrows(AddressAPIException.class, () -> addService.saveAddress(address));
-        String expectedMessage = "Erro em objeto do tipo Address ao executar save not allowed[com.felipe.AddressAPI.exception.AddressAPIException: Null CEP] com id 1.";
+        String expectedMessage = "Erro em objeto do tipo Address ao executar save not allowed[com.felipe.address.api.exception.AddressAPIException: Null CEP] com id 1.";
         String actualMessage = exception.getMessage();
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertEquals(expectedMessage, actualMessage);
     }
 
 
@@ -111,9 +111,9 @@ public class AddServiceTest {
         Address address = AddressCreator.createAddress();
         address.setCity(null);
         Exception exception = assertThrows(AddressAPIException.class, () -> addService.updaterAddress(address));
-        String expectedMessage = "Erro em objeto do tipo Address ao executar update not allowed[com.felipe.AddressAPI.exception.AddressAPIException: Null City] com id 1.";
+        String expectedMessage = "Erro em objeto do tipo Address ao executar update not allowed[com.felipe.address.api.exception.AddressAPIException: Null City] com id 1.";
         String actualMessage = exception.getMessage();
-        assertTrue(actualMessage.contains(expectedMessage));
+        assertEquals(expectedMessage, actualMessage);
     }
 
     @Test

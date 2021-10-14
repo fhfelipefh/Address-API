@@ -1,4 +1,4 @@
-package com.felipe.AddressAPI;
+package com.felipe.address.api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

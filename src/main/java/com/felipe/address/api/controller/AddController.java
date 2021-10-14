@@ -1,8 +1,8 @@
-package com.felipe.AddressAPI.controller;
+package com.felipe.address.api.controller;
 
-import com.felipe.AddressAPI.address.Address;
-import com.felipe.AddressAPI.address.Repository;
-import com.felipe.AddressAPI.service.AddService;
+import com.felipe.address.api.address.Address;
+import com.felipe.address.api.address.Repository;
+import com.felipe.address.api.service.AddService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +26,7 @@ public class AddController {
 
     //GET init
     @GetMapping("")
-    String hello() {
+    public String hello() {
         return "<html><p>Hello, World!</p><p><b>Mais informações em:&nbsp;</b><a href='https://github.com/fhfelipefh/Address-API'>https://github.com/fhfelipefh/Address-API</a></p></html>";
     }
 

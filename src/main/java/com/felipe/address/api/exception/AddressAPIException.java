@@ -1,4 +1,4 @@
-package com.felipe.AddressAPI.exception;
+package com.felipe.address.api.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
