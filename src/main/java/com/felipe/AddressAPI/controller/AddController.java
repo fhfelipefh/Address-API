@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/address")
 public class AddController {
 
-    private Repository repository;
+    private final Repository repository;
     private final AddService addservice;
 
     @Autowired
