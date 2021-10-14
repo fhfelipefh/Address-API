@@ -42,6 +42,8 @@ public class Address {
     @Column(nullable = false)
     private descriptionType type;
 
+
+
     public descriptionType getType() {
         return type;
     }
@@ -121,9 +123,6 @@ public class Address {
 
     public ArrayList<AddressAPIException> emptyFieldsVerify(Address address) {
         ArrayList<AddressAPIException> exceptions = new ArrayList();
-        if (address.getId() == null) {
-            exceptions.add(new AddressAPIException("Null ID"));
-        }
         if (address.getHouseNumber() == null) {
             exceptions.add(new AddressAPIException("Null House Number"));
         }

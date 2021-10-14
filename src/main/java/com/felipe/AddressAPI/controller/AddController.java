@@ -64,7 +64,7 @@ public class AddController {
 
     //PUT
     @PutMapping("/put/{id}")
-    public ResponseEntity<Address> updater(@RequestBody Address address) {
+    public ResponseEntity<Address> updateAddress(@RequestBody Address address) {
         if (addservice.updaterAddress(address) == address) {
             return ResponseEntity.ok(address);
         } else {

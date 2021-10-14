@@ -2,6 +2,7 @@ package com.felipe.AddressAPI.service;
 
 import com.felipe.AddressAPI.address.Address;
 import com.felipe.AddressAPI.address.Repository;
+import com.felipe.AddressAPI.exception.AddressAPIException;
 import com.felipe.AddressAPI.util.AddressCreator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -15,6 +16,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 
@@ -49,6 +53,8 @@ public class AddServiceTest {
         Assertions.assertEquals(address, addService.getAddressById(1L).get());
     }
 
+
+
     @Test
     public void getAddressListByCEP() {
         Assertions.assertEquals(2, addService.getAddressByCep("99999-999").size());
@@ -60,6 +66,17 @@ public class AddServiceTest {
     public void saveAddress() {
         Assertions.assertEquals(address, addService.saveAddress(address));
     }
+
+    @Test
+    public void shouldNotSaveAddressWithNullFields() {
+        Address address = AddressCreator.createAddress();
+        address.setCep(null);
+        Exception exception = assertThrows(AddressAPIException.class, () -> addService.saveAddress(address));
+        String expectedMessage = "Erro em objeto do tipo Address ao executar save not allowed[com.felipe.AddressAPI.exception.AddressAPIException: Null CEP] com id 1.";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
+
 
     @Test
     public void deleteAddress() {
@@ -87,6 +104,16 @@ public class AddServiceTest {
                 .thenReturn(Optional.of(newAddress));
 
         Assertions.assertEquals("Rua de teste",addService.getAddressById(1L).get().getStreet());
+    }
+
+    @Test
+    public void shouldNotUpdateAddressWithNullFields() {
+        Address address = AddressCreator.createAddress();
+        address.setCity(null);
+        Exception exception = assertThrows(AddressAPIException.class, () -> addService.updaterAddress(address));
+        String expectedMessage = "Erro em objeto do tipo Address ao executar update not allowed[com.felipe.AddressAPI.exception.AddressAPIException: Null City] com id 1.";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 
     @Test
