@@ -8,4 +8,5 @@ public interface Repository extends JpaRepository<Address, Long> {
 
     List<Address> findByCepContains(String cep);
     List<Address> findAll();
+    Address save(Address address);
 }
