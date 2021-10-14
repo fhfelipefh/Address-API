@@ -32,7 +32,7 @@ public class AddController {
 
     //Get ALL
     @GetMapping("/all")
-    public ResponseEntity<List<Address>> listall() {
+    public ResponseEntity<List<Address>> listAll() {
         return ResponseEntity.ok(addservice.listAll());
     }
 

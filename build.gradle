@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.5'
+	id 'org.springframework.boot' version '2.5.5'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 }
@@ -12,19 +12,12 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'junit:junit:4.13.2'
-	implementation 'junit:junit:4.13.2'
-	implementation 'org.springframework.boot:spring-boot-starter-validation'
-	implementation 'org.springframework.boot:spring-boot-devtools'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.5'
 	runtimeOnly 'com.h2database:h2:1.4.200'
-	runtimeOnly 'mysql:mysql-connector-java'
-	runtimeOnly 'org.postgresql:postgresql:42.2.24.jre7'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation group: 'io.rest-assured', name: 'spring-mock-mvc', version: '4.4.0'
-
-
 }
 
 test {
