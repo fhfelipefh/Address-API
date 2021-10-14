@@ -18,4 +18,7 @@ public class AddressAPIException extends RuntimeException{
         super(String.format(MESSAGE_STANDARD, typeObject, action, MESSAGE_INDEFINIDO));
     }
 
+    public AddressAPIException(String message) {
+        super(message);
+    }
 }

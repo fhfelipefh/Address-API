@@ -1,9 +1,11 @@
 package com.felipe.AddressAPI.address;
 
 import com.felipe.AddressAPI.enums.descriptionType;
+import com.felipe.AddressAPI.exception.AddressAPIException;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -116,4 +118,35 @@ public class Address {
     public int hashCode() {
         return Objects.hash(id, houseNumber, street, cep, city, state, country, type);
     }
+
+    public ArrayList<AddressAPIException> emptyFieldsVerify(Address address) {
+        ArrayList<AddressAPIException> exceptions = new ArrayList();
+        if (address.getId() == null) {
+            exceptions.add(new AddressAPIException("Null ID"));
+        }
+        if (address.getHouseNumber() == null) {
+            exceptions.add(new AddressAPIException("Null House Number"));
+        }
+        if (address.getStreet() == null) {
+            exceptions.add(new AddressAPIException("Null Street"));
+        }
+        if (address.getCep() == null) {
+            exceptions.add(new AddressAPIException("Null CEP"));
+        }
+        if (address.getCity() == null) {
+            exceptions.add(new AddressAPIException("Null City"));
+        }
+        if (address.getState() == null) {
+            exceptions.add(new AddressAPIException("Null State"));
+        }
+        if (address.getCountry() == null) {
+            exceptions.add(new AddressAPIException("Null Country"));
+        }
+        if (address.getType() == null) {
+            exceptions.add(new AddressAPIException("Null Type"));
+        }
+        return exceptions;
+    }
+
+
 }
