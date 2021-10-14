@@ -38,6 +38,8 @@ public class AddServiceTest {
         BDDMockito.when(repositoryMock.save(address))
                 .thenReturn(address);
 
+        BDDMockito.when(repositoryMock.findAll())
+                .thenReturn(List.of(address, address));
     }
 
     @Test
@@ -87,7 +89,9 @@ public class AddServiceTest {
         Assertions.assertEquals("Rua de teste",addService.getAddressById(1L).get().getStreet());
     }
 
-
-
+    @Test
+    public void listAllAddress() {
+       Assertions.assertEquals(2,addService.listAll().size());
+    }
 
 }

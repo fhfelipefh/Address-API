@@ -25,8 +25,9 @@ public class AddService {
     }
 
     public Address saveAddress(Address address) {
-        if (address.getId() == null || address.getCep() == null) {
-            throw new AddressAPIException("Address", "saveAddress", address.getId());
+        ArrayList<AddressAPIException> exceptionArrayList = address.emptyFieldsVerify(address);
+        if (exceptionArrayList.size() >= 1) {
+            throw new AddressAPIException("Address", "save not allowed" + exceptionArrayList.toString(), address.getId());
         }
         return this.repository.save(address);
     }
@@ -48,15 +49,10 @@ public class AddService {
         return this.repository.findByCepContains(cep);
     }
 
-    public void updateCep(Long id, Address cep) {
-        final Address newCep = repository.findById(id).orElseThrow(() -> new RuntimeException("Cep empty"));
-        newCep.setCep(cep.getCep());
-        repository.save(newCep);
-    }
-
     public List<Address> listAll() {
         return this.repository.findAll();
     }
+
 
 
 }

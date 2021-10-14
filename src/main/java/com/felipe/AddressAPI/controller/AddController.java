@@ -75,12 +75,5 @@ public class AddController {
         }
     }
 
-    //Patch
-    @PatchMapping("/patch/{id}")
-    public String editcep(@PathVariable("id") Long id, @RequestBody Address cep) {
-        addservice.updateCep(id, cep);
-        return "sucess";
-    }
-
 
 }
