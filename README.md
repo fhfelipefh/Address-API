@@ -27,7 +27,7 @@
  
  ### Passo 2:
  
-  Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API na plataforma Heroku. 
+  Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API.
   Caso utilize o método GET no endereço localhost:8081/address verá o mesmo resultado do seu navegador, o diferencial é poder utilizar fácilmente os outros métodos entre eles POST,PUT, e DELETE.
   
    <img src="img\postmanget.JPG" >
