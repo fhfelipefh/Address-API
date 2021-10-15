@@ -6,11 +6,8 @@ plugins {
 
 group = 'com.felipe'
 version = '1'
+sourceCompatibility = '8'
 
-java {
-	sourceCompatibility = JavaVersion.VERSION_1_8
-	targetCompatibility = JavaVersion.VERSION_1_8
-}
 
 repositories {
 	mavenCentral()
