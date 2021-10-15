@@ -20,7 +20,7 @@
 
 ### Teste de conexão: 
 
-  Você pode fazer um teste de conexão utilizando o link https://addressapiby.herokuapp.com/address/ e caso o servidor esteja em operação  verá uma página web com a mensagem "Hello, World!", a API está hospedada remotamente na plataforma Heroku que pode ser acessada em  https://heroku.com 
+  Você pode fazer um teste de conexão utilizando o link localhost:8081/addresss e caso o servidor esteja em operação  verá uma página web com a mensagem "Hello, World!".
  
  <img src="img\helloworld.JPG" >
  <hr>
@@ -28,7 +28,7 @@
  ### Passo 2:
  
   Utilize o software Postman que pode ser encontrado em https://www.postman.com/ o qual será responsavel por fazer as requisições HTTP para o endereço da API na plataforma Heroku. 
-  Caso utilize o método GET no endereço https://addressapiby.herokuapp.com/address/ verá o mesmo resultado do seu navegador, o diferencial é poder utilizar fácilmente os outros métodos entre eles POST,PUT,PATCH e DELETE.
+  Caso utilize o método GET no endereço localhost:8081/address verá o mesmo resultado do seu navegador, o diferencial é poder utilizar fácilmente os outros métodos entre eles POST,PUT, e DELETE.
   
    <img src="img\postmanget.JPG" >
   <hr>
@@ -62,7 +62,7 @@
   ### Passo 4: :dart:
   
   ### Utilize o Postman e use o método GET informando ID do objeto criado no endereço:
-   ### https://addressapiby.herokuapp.com/address/1 
+  
    #### No link acima o número 1 é o ID do objeto a ser localizado, caso tudo esteja correto irá ver o endereço informado e poderá o consultar o objeto criado enquanto ele existir no Banco de dados, caso o objeto desapareça será necessário criar novamente. 
    
 <img src="img\objeto.JPG" >
@@ -78,7 +78,7 @@
    <img src="img\getbycep.JPG" >
    Utilizando o CEP você pode pesquisar inserindo a informação com o método GET na barra de pesquisa usando os valores:
    
-   ### https://addressapiby.herokuapp.com/address/cep?cep=9999
+   ### https://localhost:8081/address/cep?cep=9999
    
    Onde o número "9999" é o número que você deseja pesquisar irá retornar os endereços com CEPs parecidos com o valor informado, caso use um navegador e o banco de dados possua    varios endereços você pode ver algo parecido com  o exemplo abaixo:
    
