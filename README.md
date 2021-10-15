@@ -1,5 +1,7 @@
 <p align="center"><img src="img\logo.png"></p>
 
+https://biblioteca.ibge.gov.br/visualizacao/livros/liv101639.pdf
+
 <p align="center">
   <small>Uma API Rest construida em Spring boot para cadastro de endereços brasileiros fictícios.</small>
 </p>
@@ -33,12 +35,16 @@
   
   ### Passo 3: :postbox:
    Você deve Utilizar o método POST para criar um novo endereço ficiticio, o formato utilizado é JSON:
-   
+
+    *Regras:
+    - Estado deve conter no máximo duas letras.
+    - Cep só pode receber 8 números.
+
  ```  
     {
      "houseNumber": "80",
      "street": "Rua de Teste",
-     "cep": "99999-999",
+     "cep": "12345678",
      "city": "PF",
      "state": "RS",
      "country": "BR",
@@ -61,17 +67,12 @@
    
 <img src="img\objeto.JPG" >
    
-  # Como editar uma informação? métodos PUT e PATCH
+  # Como editar uma informação? método PUT
   - O método de requisição HTTP PUT cria um novo recurso ou subsititui uma representação do recurso de destino com os novos dados.
-  - O método de requisição HTTP PATCH aplica modificações parciais a um recurso.
 
   ## Utilizando PUT:
    <img src="img\put.JPG" >
    Você pode utilizar um JSON contendo o novo número.
-   
-  ## Utilizando PATCH:
-   <img src="img\patch.JPG" >
-   Você pode utilizar também um JSON para editar o CEP e caso tudo esteja correto irá retornar uma mensagem de sucesso.
    
    ## Como fazer uma pesquisa por CEP? :mag_right:
    <img src="img\getbycep.JPG" >

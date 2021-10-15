@@ -32,7 +32,7 @@ public class AddController {
 
     //Get ALL
     @GetMapping("/all")
-    public ResponseEntity<List<Address>> listAll() {
+    public ResponseEntity<List<Address>> listAllAddress() {
         return ResponseEntity.ok(addservice.listAll());
     }
 
@@ -44,7 +44,7 @@ public class AddController {
 
     //DELETE
     @DeleteMapping("/{id}")
-    public ResponseEntity<Address> exclude(@PathVariable Long id) {
+    public ResponseEntity<Address> deleteAddressById(@PathVariable Long id) {
         addservice.deleteAddressById(id);
         return ResponseEntity.ok().build();
     }
@@ -57,7 +57,7 @@ public class AddController {
 
     //Get by ID
     @GetMapping("/{id}")
-    public ResponseEntity<Address> getAddress(@PathVariable Long id) {
+    public ResponseEntity<Address> getAddressById(@PathVariable Long id) {
         Optional<Address> optionalAddress = addservice.getAddressById(id);
         return optionalAddress.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.noContent().build());
     }

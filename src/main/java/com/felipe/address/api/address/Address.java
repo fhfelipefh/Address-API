@@ -143,7 +143,7 @@ public class Address {
             exceptions.add(new AddressAPIException("Null City"));
         }
         if (address.getState() == null) {
-            exceptions.add(new AddressAPIException("Null State"));
+            exceptions.add(new AddressAPIException("null State"));
         }
         if (address.getCountry() == null) {
             exceptions.add(new AddressAPIException("Null Country"));
@@ -153,7 +153,7 @@ public class Address {
         }
         return exceptions;
     }
-    
+
     @Override
     public String toString() {
         return "Address{" +

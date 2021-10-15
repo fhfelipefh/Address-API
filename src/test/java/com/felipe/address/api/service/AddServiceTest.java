@@ -3,6 +3,7 @@ package com.felipe.address.api.service;
 import com.felipe.address.api.address.Address;
 import com.felipe.address.api.address.Repository;
 import com.felipe.address.api.exception.AddressAPIException;
+import com.felipe.address.api.exception.IncompatibleDataForThisField;
 import com.felipe.address.api.util.AddressCreator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -39,11 +40,9 @@ public class AddServiceTest {
         BDDMockito.when(repositoryMock.findByCepContains(anyString()))
                 .thenReturn(List.of(address, address));
 
-        BDDMockito.when(repositoryMock.save(address))
-                .thenReturn(address);
 
         BDDMockito.when(repositoryMock.findAll())
-                .thenReturn(List.of(address, address));
+                .thenReturn(List.of(address, address, address));
     }
 
     @Test
@@ -53,22 +52,25 @@ public class AddServiceTest {
         Assertions.assertEquals(address, addService.getAddressById(1L).get());
     }
 
-
-
     @Test
     public void getAddressListByCEP() {
-        Assertions.assertEquals(2, addService.getAddressByCep("99999-999").size());
-        Assertions.assertEquals(address, addService.getAddressByCep("99999-999").get(0));
-        Assertions.assertEquals(address, addService.getAddressByCep("99999-999").get(1));
+        Assertions.assertEquals(2, addService.getAddressByCep("99999999").size());
+        Assertions.assertEquals(address, addService.getAddressByCep("99999999").get(0));
+        Assertions.assertEquals(address, addService.getAddressByCep("99999999").get(1));
     }
 
     @Test
     public void saveAddress() {
+        BDDMockito.when(repositoryMock.save(address))
+                .thenReturn(address);
         Assertions.assertEquals(address, addService.saveAddress(address));
     }
 
     @Test
     public void shouldNotSaveAddressWithNullFields() {
+        BDDMockito.when(repositoryMock.save(any()))
+                .thenReturn(address);
+
         Address address = AddressCreator.createAddress();
         address.setCep(null);
         Exception exception = assertThrows(AddressAPIException.class, () -> addService.saveAddress(address));
@@ -77,6 +79,31 @@ public class AddServiceTest {
         assertEquals(expectedMessage, actualMessage);
     }
 
+    @Test
+    public void shouldNotSaveAddressWithInvalidCEPData() {
+        BDDMockito.when(repositoryMock.save(any()))
+                .thenReturn(address);
+
+        Address address = AddressCreator.createAddress();
+        address.setCep("123456789");
+        Exception exception = assertThrows(IncompatibleDataForThisField.class, () -> addService.saveAddress(address));
+        String expectedMessage = "Address not be saved: [com.felipe.address.api.exception.IncompatibleDataForThisField: CEP must only contain 8 numbers]";
+        String actualMessage = exception.getMessage();
+        assertEquals(expectedMessage, actualMessage);
+    }
+
+    @Test
+    public void shouldNotSaveAddressWithInvalidStateData() {
+        BDDMockito.when(repositoryMock.save(any()))
+                .thenReturn(address);
+
+        Address address = AddressCreator.createAddress();
+        address.setState("dasdsadasfasf");
+        Exception exception = assertThrows(IncompatibleDataForThisField.class, () -> addService.saveAddress(address));
+        String expectedMessage = "Address not be saved: [com.felipe.address.api.exception.IncompatibleDataForThisField: STATE not valid]";
+        String actualMessage = exception.getMessage();
+        assertEquals(expectedMessage, actualMessage);
+    }
 
     @Test
     public void deleteAddress() {
@@ -92,7 +119,7 @@ public class AddServiceTest {
                 .thenReturn(address);
 
         addService.saveAddress(address);
-        Assertions.assertEquals("Rua dos bobos",address.getStreet());
+        Assertions.assertEquals("Rua dos bobos", address.getStreet());
         Address newAddress = AddressCreator.createAddress();
         newAddress.setStreet("Rua de teste");
         addService.updaterAddress(newAddress);
@@ -103,7 +130,7 @@ public class AddServiceTest {
         BDDMockito.when(repositoryMock.findById(1L))
                 .thenReturn(Optional.of(newAddress));
 
-        Assertions.assertEquals("Rua de teste",addService.getAddressById(1L).get().getStreet());
+        Assertions.assertEquals("Rua de teste", addService.getAddressById(1L).get().getStreet());
     }
 
     @Test
@@ -116,9 +143,12 @@ public class AddServiceTest {
         assertEquals(expectedMessage, actualMessage);
     }
 
+
     @Test
     public void listAllAddress() {
-       Assertions.assertEquals(2,addService.listAll().size());
+        Assertions.assertEquals(3, addService.listAll().size());
     }
+
+
 
 }

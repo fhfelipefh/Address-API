@@ -10,7 +10,7 @@ public class AddressCreator {
         address.setId(1L);
         address.setHouseNumber("0");
         address.setStreet("Rua dos bobos");
-        address.setCep("99999-999");
+        address.setCep("99999999");
         address.setCity("Passo Fundo");
         address.setState("RS");
         address.setCountry("Brazil");
@@ -23,7 +23,7 @@ public class AddressCreator {
         address.setId(2L);
         address.setHouseNumber("0");
         address.setStreet("Rua dos bobos");
-        address.setCep("99999-999");
+        address.setCep("99999999");
         address.setCity("Passo Fundo");
         address.setState("RS");
         address.setCountry("Brazil");

@@ -6,6 +6,8 @@ public enum DescriptionType {
     HOME,
     APARTMENT,
     COMPANY,
+    GROUND_FLOOR,
+    TREE,
     GOVERNMENT;
 
 }
