@@ -4,4 +4,8 @@ git add .
 git commit -m trabalho
 git remote add origin https://github.com/fhfelipefh/Address-API.git
 git push -u origin master
+git add .
+git checkout -b branch2
+git commit-m pr2
+git merge branch2
 
