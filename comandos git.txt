@@ -1,0 +1,7 @@
+git init
+git checkout -b branchStrong
+git add .
+git commit -m trabalho
+git remote add origin https://github.com/fhfelipefh/Address-API.git
+git push -u origin master
+
