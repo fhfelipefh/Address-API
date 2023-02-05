@@ -1,0 +1,32 @@
+package com.felipe.address.enums;
+
+public enum Type {
+    HOME,
+    APARTMENT,
+    COMPANY,
+    GROUND_FLOOR,
+    TREE,
+    UNDERGROUND,
+    UNDERGROUND_GROUND_FLOOR,
+    UNDERGROUND_TREE,
+    CASA,
+    APARTAMENTO,
+    EMPRESA,
+    SOBRADO,
+    SUBSOLO,
+    SOBRADO_SUBSOLO,
+    GOVERNMENT,
+    GOVERNMENTAL,
+    GOVERNAMENTAL,
+    LOJA,
+    SHOP,
+    SHOPPING,
+    SHOPPING_MALL,
+    SHOPPING_CENTER,
+    BANCO,
+    BANK,
+    UNDEFINED,
+    OUTRO,
+    OTHER,
+    INDEFINIDO;
+}

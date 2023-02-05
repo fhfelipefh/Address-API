@@ -1,4 +1,4 @@
-package com.felipe.address.api.address;
+package com.felipe.address.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
