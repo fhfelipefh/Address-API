@@ -10,6 +10,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import static org.mockito.Mockito.verify;
+
 @ExtendWith(SpringExtension.class)
 public class ControllerTest {
 
@@ -21,6 +23,13 @@ public class ControllerTest {
     @Test
     void shouldReturnHello() {
         controller.hello();
+
+        verify(service).getHello();
+    }
+
+    @Test
+    void shouldListAllAddress() {
+        controller.listAllAddress();
     }
 
 }

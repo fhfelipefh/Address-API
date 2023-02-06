@@ -1,4 +1,5 @@
 #!/bin/bash
 chmod +x ./gradlew
-./gradlew test && \
-./gradlew ujar
+echo "Running tests..."
+./gradlew test
+echo "Tests finished"

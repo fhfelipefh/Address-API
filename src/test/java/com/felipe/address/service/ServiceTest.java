@@ -15,5 +15,4 @@ public class ServiceTest {
     @Mock
     private Repository repositoryMock;
 
-
 }
