@@ -37,3 +37,21 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+task ujar(type: Jar) {
+	manifest.attributes(['Main-Class': 'com.felipe.address.App'])
+
+	duplicatesStrategy = 'include'
+
+	from sourceSets.main.output
+
+	dependsOn configurations.runtimeClasspath
+	from {
+		configurations.runtimeClasspath.findAll { it.name.endsWith('jar') }.collect { zipTree(it) }
+	}
+}
+
+task run(type: JavaExec) {
+	main = 'com.felipe.address.App'
+	classpath = sourceSets.main.runtimeClasspath
+}
