@@ -20,5 +20,6 @@ jobs:
       uses: actions/setup-java@v3
       with:
         java-version: '11'
-    - name: Build with Gradle
+        distribution: 'temurin'
+    - name: Build with Gradle wrapper
       run: ./gradlew build
